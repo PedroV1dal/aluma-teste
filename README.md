@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Alume Teste - Reserva de Voos Espaciais
 
-## Getting Started
+Este é um projeto de teste desenvolvido para a Alume, utilizando Next.js e bootstrapped com create-next-app. A aplicação permite que usuários reservem voos espaciais, preenchendo um formulário com informações pessoais e selecionando um voo futuro. Após a reserva, uma página de sucesso exibe detalhes do voo, informações técnicas e links relacionados.
+Funcionalidades
 
-First, run the development server:
+- Formulário de Reserva: Permite ao usuário selecionar um voo, informar nome, idade e problemas de saúde.
+- Página de Sucesso: Exibe informações do passageiro, detalhes do voo (nome, data, status), informações técnicas (foguete, launchpad, núcleo) e links relacionados (Reddit, Webcast, etc.).
+- Responsividade: Layout adaptado para diferentes tamanhos de tela (mobile, tablet, desktop).
+- Limpeza de Formulário: O formulário é reiniciado ao iniciar um novo cadastro.
+- Modularidade: Componentes organizados em átomos, moléculas e organismos para melhor manutenção.
 
-```bash
+Tecnologias Utilizadas
+
+- Next.js 14: Framework React para construção de aplicações web.
+- TypeScript: Tipagem estática para maior segurança e manutenção.
+- Tailwind CSS: Estilização rápida e responsiva.
+- React Hook Form: Gerenciamento de formulários.
+- Date-fns: Formatação de datas.
+- Heroicons: Ícones para a interface.
+
+Pré-requisitos
+
+    Node.js: Versão 18 ou superior.
+    Gerenciador de Pacotes: npm, yarn, pnpm ou bun.
+
+Como Rodar o Projeto
+
+1. Clone o Repositório:
+
+```
+git clone https://github.com/seu-usuario/alume-teste.git
+cd alume-teste
+```
+
+2. Instale as Dependências:
+
+```
+npm install
+# ou
+yarn install
+# ou
+pnpm install
+# ou
+bun install
+```
+
+3. Inicie o Servidor de Desenvolvimento:
+
+```
 npm run dev
-# or
+# ou
 yarn dev
-# or
+# ou
 pnpm dev
-# or
+# ou
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Acesse a Aplicação: Abra http://localhost:3000 no seu navegador para ver o resultado.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Estrutura do Projeto
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- src/app: Páginas principais (page.tsx para a página inicial e success.tsx para a página de sucesso).
+- src/components: Componentes organizados em:
+  - atoms: Componentes básicos (Input, Select, Button).
+  - molecules: Componentes intermediários (PassengerInfo, FlightDetails, etc.).
+  - organisms: Componentes complexos (FlightForm, SuccessCard).
+  - templates: Layouts (MainLayout).
+- src/hooks: Hooks personalizados (ex.: useFlightReservation).
+- src/repository: Lógica de acesso à API (ex.: LaunchRepository).
+- src/utils/types: Tipagens TypeScript (ex.: launchs.ts).
 
-## Learn More
+Fluxo da Aplicação
 
-To learn more about Next.js, take a look at the following resources:
+    Na página inicial (/), o usuário preenche o formulário com:
+        Seleção de um voo futuro.
+        Nome completo.
+        Idade (mínimo 16 anos).
+        Indicação de problemas de saúde.
+    Ao enviar o formulário, o usuário é redirecionado para a página de sucesso (/success).
+    A página de sucesso exibe:
+        Informações do passageiro.
+        Detalhes do voo (nome, data, status, detalhes da missão).
+        Informações técnicas (foguete, launchpad, núcleo).
+        Links relacionados.
+    O usuário pode clicar em "Novo Cadastro" para voltar à página inicial, onde o formulário estará limpo.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+API Utilizada
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+A aplicação consome a API pública da SpaceX para obter dados de lançamentos futuros:
 
-## Deploy on Vercel
+    Endpoint: https://api.spacexdata.com/v4/launches/upcoming
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Possíveis Melhorias
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+    Adicionar um logo da SpaceX no topo da página inicial.
+    Incluir animações sutis (ex.: com Framer Motion).
+    Implementar testes unitários com Jest e React Testing Library.
+    Adicionar validações mais robustas no backend (se aplicável).
