@@ -72,18 +72,18 @@ Estrutura do Projeto
 
 Fluxo da Aplicação
 
-    Na página inicial (/), o usuário preenche o formulário com:
-        Seleção de um voo futuro.
-        Nome completo.
-        Idade (mínimo 16 anos).
-        Indicação de problemas de saúde.
-    Ao enviar o formulário, o usuário é redirecionado para a página de sucesso (/success).
-    A página de sucesso exibe:
-        Informações do passageiro.
-        Detalhes do voo (nome, data, status, detalhes da missão).
-        Informações técnicas (foguete, launchpad, núcleo).
-        Links relacionados.
-    O usuário pode clicar em "Novo Cadastro" para voltar à página inicial, onde o formulário estará limpo.
+- Na página inicial (/), o usuário preenche o formulário com:
+  - Seleção de um voo futuro.
+  - Nome completo.
+  - Idade (mínimo 16 anos).
+  - Indicação de problemas de saúde.
+- Ao enviar o formulário, o usuário é redirecionado para a página de sucesso (/success).
+- A página de sucesso exibe:
+  - Informações do passageiro.
+  - Detalhes do voo (nome, data, status, detalhes da missão).
+  - Informações técnicas (foguete, launchpad, núcleo).
+  - Links relacionados.
+- O usuário pode clicar em "Novo Cadastro" para voltar à página inicial, onde o formulário estará limpo.
 
 API Utilizada
 
@@ -93,7 +93,6 @@ A aplicação consome a API pública da SpaceX para obter dados de lançamentos 
 
 Possíveis Melhorias
 
-    Adicionar um logo da SpaceX no topo da página inicial.
-    Incluir animações sutis (ex.: com Framer Motion).
-    Implementar testes unitários com Jest e React Testing Library.
-    Adicionar validações mais robustas no backend (se aplicável).
+- Adicionar um logo da SpaceX no topo da página inicial.
+- Incluir animações sutis (ex.: com Framer Motion).
+- Implementar testes unitários com Jest e React Testing Library.
